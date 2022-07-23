@@ -1,0 +1,56 @@
+import './App.css';
+import CollectionCard from './components/CollectionCard';
+import Header from './components/Header';
+import { useState, useEffect } from 'react'
+import axios from 'axios';
+import Punklist from './components/Punklist';
+import Main from './components/Main';
+
+
+function App() {
+
+  const [punkListData, setPunkListData] = useState([])
+  const [selectedPunk, setSelectedPunk] = useState(0)
+  //Here punkListData is a bucket and we are going to store all the punks right in there
+
+  useEffect(() => {
+    async function getMyNfts() {
+      const openseaData = await axios.get(
+        'https://testnets-api.opensea.io/assets?asset_contract_address=0xDdF5C6a6e8a57648A4BDFDDCbC961524eE7b8aC7&order_direction=asc'
+      )
+
+      console.log(openseaData.data.assets)
+      setPunkListData(openseaData.data.assets)
+      punkListData.map(punk => {
+        console.log(punk.name)
+      })
+      console.log(punkListData)
+    }
+    getMyNfts()
+  }, [])
+
+
+
+  return (
+    <div className='app'>
+      <Header />
+      {punkListData.length > 0 && (
+        <>
+          <Main 
+            punkListData={punkListData}
+            selectedPunk={selectedPunk}
+          />
+          <Punklist
+            punkListData={punkListData}
+            setSelectedPunk={setSelectedPunk}
+          />
+        </>
+      )
+
+      }
+
+    </div>
+  )
+}
+
+export default App;

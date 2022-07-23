@@ -1,0 +1,146 @@
+.main {
+    max-height: 50vh;
+}
+.mainContent{
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+
+}
+
+.punkHighlight{
+    flex: 0.25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.punkContainer{
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    margin-right: 20px;
+}
+
+.selectedPunk{
+   object-fit: contain;
+   max-width: min(30vw,40vh);
+   max-height: 30vw;
+}
+.punkDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* flex: 0.75; */
+    column-gap: 0px;
+    height: fit-content;
+}
+
+.title{
+    display: flex;
+    float: left;
+    font-size: 50px;
+    font-weight: 800;
+    height: fit-content;
+}
+.itemNumber{
+    color: white;   
+    display: flex;
+    float: left;
+    /* align-self: inline-end; */
+    font-size: 62px;
+}
+
+.noisy {
+    display: flex;
+    flex-direction: column;
+    row-gap: 170px;
+}
+
+.owner {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    height: 50px;
+    column-gap: 500px;
+}
+.owner >div {
+    margin: 0 5px;
+}
+
+.ownermain {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    height: 50px;
+    width: 100%;
+    flex: flex-start;
+    column-gap: 10px;
+}
+
+.ownerImageContainer {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-radius: 50px;
+    overflow: hidden;
+    object-fit: contain;
+
+}
+
+.ownerImageContainer > img {
+    height: 100%;
+    width: 100%;
+}
+
+.ownerDetails{
+    display: flex;
+    flex-direction: row;
+    align-self: baseline;
+    flex: 1;
+
+}
+
+/* make ownerNameAndHandle to show below title */
+.ownerNameAndHandle{
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    flex: 1;
+}
+
+/* .ownerNameAndHandle{
+    flex: 1;
+    float: left
+} */
+
+.ownerHandle{
+    color: #00ebfe
+}
+
+.extradetails{
+    display: flex;
+    flex-direction: row;
+    align-self: baseline;
+    flex: flex-end;
+    column-gap: 20px;
+}
+
+.ownerLink{
+    padding: 2px;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #fff;
+    margin: 0 0 0 10px;
+}
+
+.ownerLink > img {
+    height: 100%;
+    width: 100%;
+}
+
+.ownerAddress{
+    color: white;
+}
